@@ -60,29 +60,31 @@ const Nav = () => {
 
         <div className="nav-links-container">
           {navItems.map(({ path, icon, label }) => (
-            <NavLinkItem
-              key={path}
-              iconSrc={icon}
-              text={label}
-              onClick={() => handleNavigate(path)}
-              isActive={
-                location.pathname === path ||
-                (path === '/events' && location.pathname.startsWith('/events/'))
-              }
-            />
+              <NavLinkItem
+                key={path}
+                iconSrc={icon}
+                text={label}
+                onClick={() => handleNavigate(path)}
+                isActive={
+                  location.pathname === path ||
+                  (path === '/events' && location.pathname.startsWith('/events/'))
+                }
+              />
           ))}
         </div>
       </div>
 
       <div className="nav-mobile-wrapper" ref={dropdownRef}>
-        <div className="nav-container-mobile">
-          <img src="/images/logos/Ventixe-Logo.svg" alt="logo" />
+        <div className="nav-container-mobile" onClick={() => handleNavigate("/events")}>
+          <div className='nav-img-container'><img src="/images/logos/Ventixe-Logo.svg" alt="logo" /></div>
           <p>{getTitle()}</p>
-          <img
-            src="/images/icons/Button-Icon.svg"
-            alt="dropdown"
-            onClick={() => setIsDropdownOpen((prev) => !prev)}
-          />
+          <div className='nav-img-container'>
+            <img
+              src="/images/icons/Button-Icon.svg"
+              alt="dropdown"
+              onClick={() => setIsDropdownOpen((prev) => !prev)}
+            />
+          </div>
         </div>
 
         {isDropdownOpen && (

@@ -175,6 +175,8 @@ h6, .h6 {
 
 }
 
+
+
 nav {
   grid-area: nav;
   background-color: var(--nav-background-color);
@@ -200,17 +202,36 @@ nav {
       font-weight: 500;
       color: var(--secondary-110);
       height: 4vh;
+
+      .nav-img-container {
+        width: 36px;
+        height: 36px;
+        display: grid;
+        place-items: center;
+        transition: background-color 0.1s ease-in-out;
+
+        &:hover {
+          cursor: pointer;
+          background-color: var(--secondary-70-opacity);
+          border-radius: 12px;
+        }
+
+      }
       
-      img {
+      .nav-item-container {
+        img {
         cursor: pointer;
         background-color: transparent;
         transition: background-color 0.1s ease-in-out;
         border-radius: 8px;
+        }
+
+        img:hover {
+          background-color: var(--primary-100-opacity);
+        }
       }
 
-      img:hover {
-        background-color: var(--primary-100-opacity);
-      }
+
     }
 
       .nav-dropdown {
@@ -276,6 +297,10 @@ nav {
         .nav-logo-text {
           display: none;
         }
+
+        &:hover{
+          cursor: pointer;
+        }
       }
 
       .nav-links-container {
@@ -289,21 +314,21 @@ nav {
         .nav-link-item {
           display: grid;
           place-items: center;
-          
+          transition: background-color 0.1s ease-in-out;
+          border-radius: 50%;
+          padding: 15%;
 
           img {
             height: 100%;
-            padding: 15%;
             background-color: transparent;
-            border-radius: 50%;
-            transition: background-color 0.1s ease-in-out;
+            
           }
 
           .nav-link-text {
             display: none;
           }
 
-          :hover {
+          &:hover {
             background-color: var(--primary-100-opacity);
             cursor: pointer;
           }
@@ -364,9 +389,11 @@ nav {
           display: flex;
           background-color: transparent;
           border-radius: 14px;
+          padding: 0;
           gap: 0.6rem;
           align-items: center;
           justify-content: start;
+          max-height: 52px;
 
           .nav-link-text {
             display: block;
@@ -834,6 +861,7 @@ footer {
 
       .event-description-location {
         display: flex;
+        align-items: center;
         gap: 0.2rem;
         width: 100%;
         font-size: 11px;
