@@ -75,8 +75,8 @@ const Nav = () => {
       </div>
 
       <div className="nav-mobile-wrapper" ref={dropdownRef}>
-        <div className="nav-container-mobile" onClick={() => handleNavigate("/events")}>
-          <div className='nav-img-container'><img src="/images/logos/Ventixe-Logo.svg" alt="logo" /></div>
+        <div className="nav-container-mobile">
+          <div className='nav-img-container' onClick={() => handleNavigate("/events")}><img src="/images/logos/Ventixe-Logo.svg" alt="logo" /></div>
           <p>{getTitle()}</p>
           <div className='nav-img-container'>
             <img
