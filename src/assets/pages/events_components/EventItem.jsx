@@ -6,7 +6,7 @@ const EventItem = ({
   status,
   date,
   time,
-  name,
+  title,
   location,
   price,
 }) => {
@@ -33,7 +33,7 @@ const EventItem = ({
           <img src="/images/icons/CalendarDot.svg" alt="date" />
           {date} | {time}
         </div>
-        <div className="event-description-name">{name}</div>
+        <div className="event-description-name">{title}</div>
         <div className="event-description-location">
           <img src="/images/icons/MapPin.svg" alt="map" />
           <p>{location}</p>
