@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import BookingsFilters from "./bookings_components/BookingsFilters.jsx";
 import BookingsBody from "./bookings_components/BookingsBody.jsx";
 
+//Refactored with the help of GPT
 const BOOKINGS_API = "https://win24ventixe-bookingservice-gcaghxbsbnd8cgg4.swedencentral-01.azurewebsites.net/api/Bookings";
 const EVENT_API = "https://win24ventixe-eventservice-chadcqb0ftbregb8.swedencentral-01.azurewebsites.net/api/Events";
 

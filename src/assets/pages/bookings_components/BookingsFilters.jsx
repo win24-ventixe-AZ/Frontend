@@ -1,5 +1,6 @@
 import FilterButton from "../events_components/FilterButton.jsx";
 
+
 const BookingsFilters = ({
   activeFilter,
   onFilterChange,
