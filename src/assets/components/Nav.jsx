@@ -31,6 +31,7 @@ const Nav = () => {
     const { pathname } = location;
     if (routeTitles[pathname]) return routeTitles[pathname];
     if (pathname.endsWith('/edit')) return 'Edit Event ';
+    if (pathname.endsWith('/book')) return 'Book Event ';
     if (pathname.startsWith('/events/')) return 'Event Details';
     return 'Unknown';
   };

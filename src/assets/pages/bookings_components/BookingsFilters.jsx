@@ -1,44 +1,46 @@
-import { useState } from 'react';
-import FilterButton from '../events_components/FilterButton.jsx';
+import FilterButton from "../events_components/FilterButton.jsx";
 
-
-
-
-const BookingsFilters = () => {
-  const [activeFilter, setActiveFilter] = useState('Active');
-
-
-    const filters = [ // Will likely be handled by an API action to get the right statuses, counts need to be updated based on database info
-    { name: 'Active', count: 0 },
-    { name: 'Draft', count: 0 },
-    { name: 'Past', count: 0 },
+const BookingsFilters = ({
+  activeFilter,
+  onFilterChange,
+  searchQuery,
+  onSearchChange,
+  statusCounts,
+}) => {
+  const filters = [
+    { name: "Active", count: statusCounts.Active },
+    { name: "Draft", count: statusCounts.Draft },
+    { name: "Past", count: statusCounts.Past },
   ];
 
   return (
-      <div className="events-filter-container">
-        <div className="events-filter-bar">
-          {filters.map((filter) => (
-            <FilterButton 
-              key={filter.name}
-              name={filter.name}
-              count={filter.count}
-              isActive={activeFilter === filter.name}
-              onClick={() => setActiveFilter(filter.name)}
-            />
-          ))}
-        </div>
-
-        <div className="events-search-bar">
-          <input
-            type="text"
-            placeholder="Search event"
-            className="search-input"
+    <div className="events-filter-container">
+      <div className="events-filter-bar">
+        {filters.map((filter) => (
+          <FilterButton
+            key={filter.name}
+            name={filter.name}
+            count={filter.count}
+            isActive={activeFilter === filter.name}
+            onClick={() => onFilterChange(filter.name)}
           />
-          <div className='search-icon-container'>
-            <img src="/images/icons/MagnifyingGlass.svg" alt="search" />
-          </div>
+        ))}
+      </div>
+
+      <div className="events-search-bar">
+        <input
+          type="text"
+          placeholder="Search event or Booking ID"
+          className="search-input"
+          value={searchQuery}
+          onChange={(e) => onSearchChange(e.target.value)}
+        />
+        <div className="search-icon-container">
+          <img src="/images/icons/MagnifyingGlass.svg" alt="search" />
         </div>
       </div>
-  )
-}
-export default BookingsFilters
+    </div>
+  );
+};
+
+export default BookingsFilters;

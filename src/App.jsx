@@ -11,6 +11,7 @@ import Invoices from './assets/pages/Invoices'
 import AccountProfile from './assets/pages/AccountProfile'
 import AddEvent from './assets/pages/AddEvent'
 import EditEvent from './assets/pages/EditEvent'
+import BookEvent from './assets/pages/BookEvent'
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
         <Route path='/events' element={<Events />} />
         <Route path='/add-event' element={<AddEvent />} />
         <Route path='/events/:id' element={<EventDetails/>} />
+        <Route path='/events/:id/book' element={<BookEvent/>} />
         <Route path='/events/:id/edit' element={<EditEvent/>} />
         <Route path='/bookings' element= {<Bookings/>} />
         <Route path='/invoices' element= {<Invoices/>} /> 

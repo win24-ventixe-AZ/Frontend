@@ -18,8 +18,7 @@ const EventDetailsItem = ({id,
   };
 
   const handleBookNowClick = () => {
-    // TODO: Add booking logic here when backend is made
-    navigate('/bookings');
+  navigate(`/events/${id}/book`);
   };
 
   return (

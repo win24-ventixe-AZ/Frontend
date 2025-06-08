@@ -9,6 +9,7 @@ const BookingsItem = ({
   time,
   eventName,
   price,
+  ticketQuantity,
 }) => {
   const navigate = useNavigate();
 
@@ -27,13 +28,14 @@ const BookingsItem = ({
         <div className="primary">{eventName}</div>
         <div className="secondary">{type}</div>
       </div>
+      <div>{ticketQuantity}</div>
       <div>${price}</div>
       <div className={`tag-event-${status.toLowerCase()}`}>
         <span className="bullet">• </span>
         {status}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BookingsItem
+export default BookingsItem;

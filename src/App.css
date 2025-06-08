@@ -951,7 +951,7 @@ footer {
     }
   }
 
-#create-event, #edit-event {
+#create-event, #edit-event, #book-event {
   height: 100%;
   padding-top: 1rem;
   display: flex;
@@ -1278,13 +1278,13 @@ footer {
 
 .bookings-grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr 2fr 1fr 1fr;
+  grid-template-columns: 1fr 1.5fr 2fr 0.8fr 1fr 1fr;
   gap: 1rem;
   align-items: center;
   padding: 0.8rem 0;
   border-bottom: 1px solid var(--gray-30);
   transition: background-color 0.1s ease-in-out;
-  min-width: 768px; 
+  min-width: 768px;
   border-radius: 16px;
 
   &:hover {
@@ -1293,7 +1293,6 @@ footer {
   }
 }
 
-/* Header row */
 .bookings-grid.header {
   font-weight: 600;
   font-size: 0.9rem;
@@ -1302,11 +1301,12 @@ footer {
   background-color: var(--gray-10);
   border-radius: 0;
   transition: none;
-  &:hover{
+  &:hover {
     cursor: auto;
     background-color: var(--gray-10);
   }
 }
+
 
 /* Typography */
 .primary {
